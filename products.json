@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "logitech-g-pro-wireless",
+    "title": "Logitech G Pro Wireless Review – The Ultimate Esports Gaming Mouse",
+    "asin": "B07GCKQD77",
+    "intro": "The Logitech G Pro Wireless is a top-tier mouse for competitive gamers who want speed and precision.",
+    "features": [
+      "Ultra-lightweight design (80g)",
+      "Hero 25K sensor with 25,600 DPI",
+      "Wireless LIGHTSPEED technology with < 1ms latency",
+      "Ambidextrous design with removable buttons",
+      "Battery life: up to 60 hours"
+    ],
+    "pros": ["Extremely responsive & reliable", "Lightweight for competitive play"],
+    "cons": ["Expensive compared to other mice", "No Bluetooth option"],
+    "images": [
+      "/images/logitech-g-pro-1.jpg",
+      "/images/logitech-g-pro-2.jpg"
+    ],
+	"date": "2025-09-01",
+    "ctaText": "Check the latest price on Amazon",
+    "layoutType": "review",
+    "conclusion": "Overall, the Logitech G Pro Wireless remains a benchmark for competitive gaming mice, despite its premium price."
+  },
+  {
+    "slug": "best-gaming-keyboards",
+    "title": "Best Gaming Keyboards 2025 – Top Picks for Every Gamer",
+    "asin": null,
+    "intro": "Choosing the right keyboard can completely change your gaming experience. Here are our top picks.",
+    "features": [
+      "Mechanical switches with fast actuation",
+      "RGB customization with software support",
+      "Durable build quality",
+      "Ergonomic wrist support"
+    ],
+    "pros": ["Wide variety of options", "Great for long sessions"],
+    "cons": ["Some models are pricey", "RGB may not appeal to everyone"],
+    "images": [
+      "/images/keyboards-1.jpg",
+      "/images/keyboards-2.jpg"
+    ],
+	"date": "2025-09-08",
+    "ctaText": "See our full list on Amazon",
+    "layoutType": "comparison",
+    "conclusion": "Whether you’re a casual gamer or a pro, investing in a good gaming keyboard is worth every penny."
+  }
+]
