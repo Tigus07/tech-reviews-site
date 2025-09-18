@@ -26,12 +26,10 @@ const categoryTree = {
   ],
 };
 
-/** SEO: title/description/canonical/OG/Twitter */
+/** SEO: dynamic title/description/canonical/OG/Twitter */
 export function generateMetadata({ params }) {
   const slug = params.slug;
-  const titleBase = slug
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (m) => m.toUpperCase());
+  const titleBase = slug.replace(/-/g, " ").replace(/\b\w/g, (m) => m.toUpperCase());
   const title = `${titleBase} – Reviews & Buying Advice`;
   const description = `Browse reviews, specs and comparisons for ${titleBase}.`;
   const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -109,20 +107,9 @@ export default function CategoryPage({ params }) {
 
             <div className="p-6 flex flex-col flex-grow">
               <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
-              <p className="text-gray-700 mb-4 line-clamp-3">{product.intro}</p>
 
-              {product.rating?.overall && (
-                <div className="flex items-center mb-4">
-                  <span className="text-yellow-500 mr-2">
-                    {"★".repeat(product.rating.overall)}
-                  </span>
-                  <span className="text-gray-400">
-                    {"★".repeat(10 - product.rating.overall)}
-                  </span>
-                  <span className="ml-2 text-gray-600 text-sm">
-                    {product.rating.overall}/10
-                  </span>
-                </div>
+              {product.intro && (
+                <p className="text-gray-700 mb-4 line-clamp-3">{product.intro}</p>
               )}
 
               <div className="mt-auto">
@@ -130,7 +117,7 @@ export default function CategoryPage({ params }) {
                   href={`/reviews/${product.slug}`}
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
                 >
-                  Read full review →
+                  Read full review &rarr;
                 </Link>
               </div>
             </div>

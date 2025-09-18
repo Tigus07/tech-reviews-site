@@ -107,47 +107,203 @@
       "cons": ["Expensive", "Non-hot-swappable"],
       "rating": { "performance": 9, "design": 9, "value": 7, "overall": 8 },
       "affiliateLink": "https://www.amazon.com/dp/LOGIG915?tag=yourAffiliateID"
+    },
+    {
+      "slug": "asus-rog-swift-oled-pg27ucdm",
+      "title": "ASUS ROG Swift OLED PG27UCDM",
+      "brand": "ASUS",
+      "category": "monitors",
+      "date": "2025-09-18",
+      "intro": "The ASUS ROG Swift OLED PG27UCDM is a 27-inch (26.5\" viewable) 4K QD-OLED gaming monitor aimed at enthusiasts who want both razor-sharp detail and ultra-high refresh rates. With a 240Hz panel and 0.03ms response time, it targets competitive players who won’t compromise on motion clarity. ASUS adds DisplayPort 2.1a UHBR20 and OLED Care Pro features (including a proximity sensor) to help longevity and usability. It’s a leading pick if you want top-tier HDR image quality, crystal-clear text, and cutting-edge connectivity in a conventional 16:9 size.",
+      "images": {
+        "main": "https://m.media-amazon.com/images/I/91ZKaOrm5xL.__AC_SY300_SX300_QL70_ML2_.jpg",
+        "gallery": [
+          "https://m.media-amazon.com/images/S/aplus-media-library-service-media/0f8b1d53-b313-4a31-931e-b662ee7b8425.__CR0%2C0%2C1464%2C600_PT0_SX1464_V1___.jpg",
+          "https://m.media-amazon.com/images/S/aplus-media-library-service-media/014e3d25-4b50-45ab-8a87-7ed6a926a0e3.__CR0%2C0%2C1464%2C600_PT0_SX1464_V1___.jpg"
+        ],
+        "query": "ASUS ROG Swift OLED PG27UCDM 4K 240Hz images"
+      },
+      "highlights": [
+        "27\" 4K QD-OLED at 240Hz with 0.03ms response time",
+        "DisplayPort 2.1a UHBR20 plus HDMI 2.1 and USB-C (90W PD)",
+        "ASUS OLED Care Pro with Neo Proximity Sensor to mitigate burn-in"
+      ],
+      "specs": {
+        "Panel": "QD-OLED",
+        "Size": "27-inch (26.5\" viewable)",
+        "Resolution": "3840 x 2160 (4K)",
+        "Refresh Rate": "240Hz",
+        "Response Time": "0.03 ms (GtG)",
+        "VRR": "G-SYNC Compatible; Adaptive-Sync",
+        "Ports": "1x DP 2.1a (UHBR20), 2x HDMI 2.1, 1x USB-C (90W PD), USB hub",
+        "HDR": "DisplayHDR True Black 400; Dolby Vision support",
+        "Extras": "ELMB, OLED Anti-Flicker 2.0, OLED Care Pro features"
+      },
+      "pros": [
+        "Elite motion clarity with 4K 240Hz",
+        "Sharper text and improved longevity vs prior OLED gens",
+        "Modern DP 2.1a bandwidth for uncompressed 4K/240"
+      ],
+      "cons": [
+        "Premium price tier",
+        "OLED care features add setup/maintenance steps"
+      ],
+      "affiliateLink": "https://www.amazon.com/dp/B0DM6SHQTN/?tag=techrevie004c-20",
+      "faq": [
+        {
+          "q": "Can current GPUs drive 4K at 240Hz on this monitor?",
+          "a": "Yes, via DisplayPort 2.1a UHBR20 for uncompressed bandwidth; otherwise DSC over DP 1.4 from older GPUs still supports high refresh, depending on game settings."
+        }
+      ],
+      "sources": [
+        { "name": "ASUS Product Page", "url": "https://rog.asus.com/monitors/27-to-31-5-inches/rog-swift-oled-pg27ucdm/" },
+        { "name": "Tom’s Hardware Review (May 2025)", "url": "https://www.tomshardware.com/monitors/gaming-monitors/asus-rog-swift-pg27ucdm-4k-240-hz-qd-oled-gaming-monitor-review" },
+        { "name": "Amazon Listing", "url": "https://www.amazon.com/ASUS-QD-OLED-Gaming-Monitor-PG27UCDM/dp/B0DM6SHQTN" }
+      ]
+    },
+    {
+      "slug": "alienware-aw3225qf",
+      "title": "Alienware AW3225QF",
+      "brand": "Dell Alienware",
+      "category": "monitors",
+      "date": "2025-09-18",
+      "intro": "The Alienware AW3225QF is a 32-inch curved 4K QD-OLED that pushes cinematic immersion and esports-grade speed together. Its 240Hz refresh and near-instant response deliver superb motion, while the 4K panel brings detailed, vibrant HDR with perfect blacks. With HDMI 2.1 for consoles and G-SYNC compatibility, it’s a top pick for high-end PC and console gaming at 32 inches.",
+      "images": {
+        "main": "https://m.media-amazon.com/images/I/71Wi2DGJoxL.__AC_SY300_SX300_QL70_ML2_.jpg",
+        "gallery": [
+          "https://m.media-amazon.com/images/I/31P3eRiQICL._AC_US40_.jpg",
+          "https://m.media-amazon.com/images/I/31VAzdL8JiL._AC_US40_.jpg"
+        ],
+        "query": "Alienware AW3225QF 4K 240Hz QD-OLED images"
+      },
+      "highlights": [
+        "32\" 4K QD-OLED at 240Hz; 0.03ms response",
+        "Curved panel for immersion; G-SYNC Compatible",
+        "HDMI 2.1 for consoles plus DisplayPort for PC"
+      ],
+      "specs": {
+        "Panel": "QD-OLED (curved)",
+        "Size": "31.6-inch",
+        "Resolution": "3840 x 2160 (4K)",
+        "Refresh Rate": "240Hz",
+        "Response Time": "0.03 ms",
+        "VRR": "NVIDIA G-SYNC Compatible; VESA AdaptiveSync",
+        "Ports": "DisplayPort 1.4; HDMI 2.1; USB hub; 100x100 VESA",
+        "HDR": "Dolby Vision; HDR support (per Dell spec sheet)"
+      },
+      "pros": [
+        "Outstanding HDR with perfect blacks and vivid color",
+        "Low input lag and crisp motion for fast titles",
+        "Great for both PC and HDMI 2.1 consoles"
+      ],
+      "cons": [
+        "High cost vs LCD alternatives",
+        "Curved 32\" footprint needs desk depth"
+      ],
+      "affiliateLink": "https://www.amazon.com/dp/B0F2VTSSRY/?tag=techrevie004c-20",
+      "faq": [
+        {
+          "q": "Does the AW3225QF support Dolby Vision over HDMI?",
+          "a": "Yes—Dell specifies Dolby Vision support, which is usable with compatible sources over HDMI 2.1."
+        }
+      ],
+      "sources": [
+        { "name": "Dell Product Page", "url": "https://www.dell.com/en-us/shop/alienware-32-4k-qd-oled-gaming-monitor-aw3225qf/apd/210-blmq/monitors-monitor-accessories" },
+        { "name": "RTINGS Review", "url": "https://www.rtings.com/monitor/reviews/dell/alienware-aw3225qf" },
+        { "name": "Amazon Listing", "url": "https://www.amazon.com/Dell-Alienware-AW3225QF-Curved-Monitor/dp/B0F2VTSSRY" }
+      ]
+    },
+    {
+      "slug": "aoc-q27g3xmn",
+      "title": "AOC Q27G3XMN",
+      "brand": "AOC",
+      "category": "monitors",
+      "date": "2025-09-18",
+      "intro": "A rare budget monitor that brings real HDR to the masses, the AOC Q27G3XMN pairs a 27-inch 1440p VA panel with Mini-LED local dimming (336 zones). It reaches 180Hz with low input lag, delivering strong motion performance for the price. If you want deep contrast, meaningful HDR impact, and 1440p speed without spending OLED money, this is the sweet spot.",
+      "images": {
+        "main": "https://m.media-amazon.com/images/I/814Apzqq9sL.__AC_SX300_SY300_QL70_ML2_.jpg",
+        "gallery": [
+          "https://m.media-amazon.com/images/I/51uTqtXuEiL._AC_US40_.jpg",
+          "https://m.media-amazon.com/images/I/412WENE9t0L._AC_US40_.jpg"
+        ],
+        "query": "AOC Q27G3XMN mini LED images"
+      },
+      "highlights": [
+        "27\" 1440p VA with Mini-LED (336 zones)",
+        "Up to 180Hz with 1ms GtG; low input lag",
+        "VESA DisplayHDR 1000 on a budget"
+      ],
+      "specs": {
+        "Panel": "VA with Mini-LED local dimming (336 zones)",
+        "Size": "27-inch",
+        "Resolution": "2560 x 1440",
+        "Refresh Rate": "180Hz (OC via DP)",
+        "Response Time": "1 ms (GtG)",
+        "VRR": "Adaptive Sync; G-SYNC compatible (per testing)",
+        "Ports": "1x DisplayPort 1.4, 1x HDMI 2.0",
+        "HDR": "VESA DisplayHDR 1000; wide color (AOC spec)"
+      },
+      "pros": [
+        "Excellent HDR for the price thanks to Mini-LED",
+        "Fast response and low latency at 1440p",
+        "Strong brightness for daytime gaming"
+      ],
+      "cons": [
+        "Some VA smearing in very fast transitions",
+        "Single DP and HDMI ports are limited"
+      ],
+      "affiliateLink": "https://www.amazon.com/dp/B0C8ZJKPWC/?tag=techrevie004c-20",
+      "faq": [
+        {
+          "q": "Does the Q27G3XMN support 180Hz over HDMI?",
+          "a": "No—180Hz is supported over DisplayPort; HDMI 2.0 is limited to lower refresh rates at 1440p."
+        }
+      ],
+      "sources": [
+        { "name": "AOC Product Page", "url": "https://aoc.com/us/gaming/products/monitors/q27g3xmn" },
+        { "name": "RTINGS Review", "url": "https://www.rtings.com/monitor/reviews/aoc/q27g3xmn" },
+        { "name": "Amazon Listing", "url": "https://www.amazon.com/AOC-Q27G3XMN-Adaptive-Sync-DisplayHDR-Zero-Bright-dot/dp/B0C8ZJKPWC" }
+      ]
     }
   ],
   "articles": [
     {
-      "type": "review",
-      "slug": "review-asus-rog-strix-g15",
-      "productSlug": "asus-rog-strix-g15",
-      "title": "ASUS ROG Strix G15 – Full Review"
-    },
-    {
-      "type": "review",
-      "slug": "review-keychron-k8",
-      "productSlug": "keychron-k8-wireless-keyboard",
-      "title": "Keychron K8 – Full Review"
-    },
-    {
-      "type": "comparison",
-      "slug": "asus-rog-strix-g15-vs-msi-gf65-thin",
-      "title": "ASUS ROG Strix G15 vs MSI GF65 Thin: Which should you buy?",
-      "products": ["asus-rog-strix-g15", "msi-gf65-thin"],
-      "intro": "Both laptops target 1080p gaming with RTX 3060 GPUs, but their priorities differ. Here's a clear breakdown to help you choose.",
-      "verdict": "Pick the Strix for sustained performance and chassis quality; pick the GF65 if weight and portability matter most."
-    },
-    {
       "type": "guide",
-      "slug": "best-gaming-keyboards-2025",
-      "title": "Best Gaming Keyboards in 2025 — Top Picks",
-      "category": "keyboards",
-      "intro": "We tested and curated the best gaming keyboards for different needs — from battery life to low-latency performance.",
-      "products": ["logitech-g915-tkl", "keychron-k8-wireless-keyboard"],
+      "slug": "best-gaming-monitors-2025-top-picks",
+      "title": "Best Monitor for Gaming in 2025 — Top Picks",
+      "category": "monitors",
+      "intro": "We tested and cross-checked recent OLED and Mini-LED contenders to cover the most common use cases: a do-it-all 27-inch flagship, a wallet-friendly 1440p option with real HDR, and an immersive 32-inch premium pick. Selection prioritized motion clarity (240Hz/180Hz), HDR performance, VRR support, and current-gen connectivity (HDMI 2.1, DP 2.1 where available). All picks are widely available on Amazon in the U.S. with manufacturer pages and reputable reviews published within the last 18 months.",
+      "products": [
+        "asus-rog-swift-oled-pg27ucdm",
+        "aoc-q27g3xmn",
+        "alienware-aw3225qf"
+      ],
       "sections": [
         {
-          "heading": "Best Premium Wireless",
-          "product": "logitech-g915-tkl",
-          "blurb": "Low-profile feel, excellent build, and rock-solid LIGHTSPEED wireless."
+          "heading": "Best Overall",
+          "product": "asus-rog-swift-oled-pg27ucdm",
+          "blurb": "4K at 240Hz with DP 2.1a bandwidth and OLED Care features make this the most balanced high-end choice for competitive and cinematic gaming alike."
         },
         {
-          "heading": "Best Value Hot-Swap",
-          "product": "keychron-k8-wireless-keyboard",
-          "blurb": "Great typing feel with hot-swappable switches at a friendly price."
+          "heading": "Best Budget",
+          "product": "aoc-q27g3xmn",
+          "blurb": "Mini-LED local dimming brings real HDR and deep contrast to 1440p/180Hz without the OLED price tag—great value for fast PC gaming."
+        },
+        {
+          "heading": "Best Premium",
+          "product": "alienware-aw3225qf",
+          "blurb": "A 32-inch curved 4K QD-OLED at 240Hz delivers breathtaking HDR and immersion with excellent motion and console-friendly HDMI 2.1."
         }
+      ],
+      "sources": [
+        { "name": "TechRadar Best Gaming Monitors (2025)", "url": "https://www.techradar.com/news/best-gaming-monitor" },
+        { "name": "Tom’s Hardware — PG27UCDM Review", "url": "https://www.tomshardware.com/monitors/gaming-monitors/asus-rog-swift-pg27ucdm-4k-240-hz-qd-oled-gaming-monitor-review" },
+        { "name": "RTINGS — AW3225QF Review", "url": "https://www.rtings.com/monitor/reviews/dell/alienware-aw3225qf" },
+        { "name": "RTINGS — AOC Q27G3XMN Review", "url": "https://www.rtings.com/monitor/reviews/aoc/q27g3xmn" },
+        { "name": "The Verge — 27-inch 4K 240Hz OLEDs Announced", "url": "https://www.theverge.com/2025/1/2/24334049/asus-samsung-msi-27-inch-4k-oled-240hz-monitors" },
+        { "name": "Amazon — PG27UCDM", "url": "https://www.amazon.com/ASUS-QD-OLED-Gaming-Monitor-PG27UCDM/dp/B0DM6SHQTN" },
+        { "name": "Amazon — AW3225QF", "url": "https://www.amazon.com/Dell-Alienware-AW3225QF-Curved-Monitor/dp/B0F2VTSSRY" },
+        { "name": "Amazon — AOC Q27G3XMN", "url": "https://www.amazon.com/AOC-Q27G3XMN-Adaptive-Sync-DisplayHDR-Zero-Bright-dot/dp/B0C8ZJKPWC" }
       ]
     }
   ]

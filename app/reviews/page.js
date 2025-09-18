@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import db from "../../products.json";
-import Stars from "../components/Stars"; // ✅ ajout de l'import
 
 export default function ReviewsPage() {
   const [search, setSearch] = useState("");
@@ -25,7 +24,7 @@ export default function ReviewsPage() {
         Honest and detailed reviews of the latest laptops, keyboards, and other tech gear.
       </p>
 
-      {/* Barre de recherche */}
+      {/* Searchbar */}
       <div className="flex justify-center mb-10">
         <input
           type="text"
@@ -36,7 +35,6 @@ export default function ReviewsPage() {
         />
       </div>
 
-      {/* Grille des reviews */}
       {filteredProducts.length > 0 ? (
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product) => (
@@ -59,13 +57,9 @@ export default function ReviewsPage() {
                 <p className="text-sm text-gray-500 mb-4">
                   {product.brand} • {product.category}
                 </p>
-                <p className="text-gray-700 mb-4 line-clamp-3">{product.intro}</p>
 
-                {/* ✅ Affichage des étoiles via le composant Stars */}
-                {product.rating?.overall && (
-                  <div className="mb-4">
-                    <Stars value={product.rating.overall} outOf={10} />
-                  </div>
+                {product.intro && (
+                  <p className="text-gray-700 mb-4 line-clamp-3">{product.intro}</p>
                 )}
 
                 <div className="mt-auto">
@@ -73,7 +67,7 @@ export default function ReviewsPage() {
                     href={`/reviews/${product.slug}`}
                     className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
                   >
-                    Read full review →
+                    Read full review &rarr;
                   </Link>
                 </div>
               </div>

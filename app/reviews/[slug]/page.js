@@ -2,10 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import db from "../../../products.json";
 import TOC from "../../components/TOC";
-import Stars from "../../components/Stars";
-import ScoreBar from "../../components/ScoreBar";
 
-/** SEO: title/description/canonical/OG/Twitter */
 export function generateMetadata({ params }) {
   const product = (db.products || []).find((p) => p.slug === params.slug);
   if (!product) return { title: "Review not found" };
@@ -22,25 +19,14 @@ export function generateMetadata({ params }) {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      url,
-      images: product.images?.main ? [product.images.main] : [],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: product.images?.main ? [product.images.main] : [],
-    },
+    openGraph: { title, description, url, images: product.images?.main ? [product.images.main] : [] },
+    twitter: { card: "summary_large_image", title, description, images: product.images?.main ? [product.images.main] : [] }
   };
 }
 
 export default function ReviewPage({ params }) {
   const { slug } = params;
   const product = (db.products || []).find((p) => p.slug === slug);
-
   if (!product) return notFound();
 
   return (
@@ -48,7 +34,7 @@ export default function ReviewPage({ params }) {
       <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
       <p className="text-gray-600 mb-6">{product.intro}</p>
 
-      {/* JSON-LD: Product + Review + FAQ */}
+      {/* JSON-LD: Product + optional FAQ (no ratings) */}
       {(() => {
         const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
         const pageUrl = `${site}/reviews/${product.slug}`;
@@ -61,24 +47,8 @@ export default function ReviewPage({ params }) {
           image: product.images?.main ? [product.images.main] : undefined,
           description: product.intro,
           sku: product.slug,
-          url: pageUrl,
+          url: pageUrl
         };
-
-        const reviewLd = product.rating?.overall
-          ? {
-              "@context": "https://schema.org",
-              "@type": "Review",
-              itemReviewed: { "@type": "Product", name: product.title },
-              reviewBody: product.intro,
-              author: { "@type": "Organization", name: "Tech Reviews Hub" },
-              reviewRating: {
-                "@type": "Rating",
-                ratingValue: String(product.rating.overall),
-                bestRating: "10",
-                worstRating: "0",
-              },
-            }
-          : null;
 
         const faqLd =
           Array.isArray(product.faq) && product.faq.length
@@ -88,22 +58,18 @@ export default function ReviewPage({ params }) {
                 mainEntity: product.faq.map((q) => ({
                   "@type": "Question",
                   name: q.q,
-                  acceptedAnswer: { "@type": "Answer", text: q.a },
-                })),
+                  acceptedAnswer: { "@type": "Answer", text: q.a }
+                }))
               }
             : null;
 
-        const blocks = [productLd, reviewLd, faqLd].filter(Boolean);
+        const blocks = [productLd, faqLd].filter(Boolean);
         return blocks.map((obj, i) => (
-          <script
-            key={`jsonld-review-${i}`}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
-          />
+          <script key={`jsonld-${i}`} type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }} />
         ));
       })()}
 
-      {/* TOC */}
       <TOC
         items={[
           { id: "overview", label: "Overview" },
@@ -111,31 +77,11 @@ export default function ReviewPage({ params }) {
           { id: "proscons", label: "Pros & Cons" },
           { id: "gallery", label: "Gallery" },
           ...(product.faq?.length ? [{ id: "faq", label: "FAQ" }] : []),
-          { id: "buy", label: "Where to Buy" },
+          { id: "buy", label: "Where to Buy" }
         ]}
       />
 
-      {/* Overview: ratings + top CTA */}
       <section id="overview" className="mb-6">
-        {product.rating?.overall && (
-          <div className="mb-4">
-            <Stars value={product.rating.overall} outOf={10} />
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3">
-              {"performance" in (product.rating || {}) && (
-                <ScoreBar
-                  label="Performance"
-                  value={product.rating.performance}
-                />
-              )}
-              {"design" in (product.rating || {}) && (
-                <ScoreBar label="Design" value={product.rating.design} />
-              )}
-              {"value" in (product.rating || {}) && (
-                <ScoreBar label="Value" value={product.rating.value} />
-              )}
-            </div>
-          </div>
-        )}
         {product.affiliateLink && (
           <a
             href={product.affiliateLink}
@@ -160,7 +106,6 @@ export default function ReviewPage({ params }) {
         </div>
       )}
 
-      {/* Specs */}
       {product.specs && (
         <section id="specs" className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">Specifications</h2>
@@ -177,40 +122,28 @@ export default function ReviewPage({ params }) {
         </section>
       )}
 
-      {/* Pros / Cons */}
       {(product.pros?.length > 0 || product.cons?.length > 0) && (
-        <section
-          id="proscons"
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10"
-        >
+        <section id="proscons" className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {product.pros?.length > 0 && (
             <div>
-              <h2 className="text-xl font-semibold mb-2 text-green-600">
-                ✅ Pros
-              </h2>
+              <h2 className="text-xl font-semibold mb-2 text-green-600">✅ Pros</h2>
               <ul className="list-disc list-inside text-gray-700">
-                {product.pros.map((p, i) => (
-                  <li key={i}>{p}</li>
-                ))}
+                {product.pros.map((p, i) => <li key={i}>{p}</li>)}
               </ul>
             </div>
           )}
           {product.cons?.length > 0 && (
             <div>
-              <h2 className="text-xl font-semibold mb-2 text-red-600">
-                ❌ Cons
-              </h2>
+              <h2 className="text-xl font-semibold mb-2 text-red-600">❌ Cons</h2>
               <ul className="list-disc list-inside text-gray-700">
-                {product.cons.map((c, i) => (
-                  <li key={i}>{c}</li>
-                ))}
+                {product.cons.map((c, i) => <li key={i}>{c}</li>)}
               </ul>
             </div>
           )}
         </section>
       )}
 
-      {/* CTA milieu */}
+      {/* Mid CTA */}
       {product.affiliateLink && (
         <div className="text-center my-8">
           <a
@@ -224,27 +157,19 @@ export default function ReviewPage({ params }) {
         </div>
       )}
 
-      {/* Gallery */}
-      {Array.isArray(product.images?.gallery) &&
-        product.images.gallery.length > 0 && (
-          <section id="gallery" className="mb-10">
-            <h2 className="text-2xl font-semibold mb-3">Gallery</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {product.images.gallery.map((src, i) => (
-                <div key={i} className="relative w-full h-40">
-                  <Image
-                    src={src}
-                    alt={product.title}
-                    fill
-                    className="object-cover rounded"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+      {Array.isArray(product.images?.gallery) && product.images.gallery.length > 0 && (
+        <section id="gallery" className="mb-10">
+          <h2 className="text-2xl font-semibold mb-3">Gallery</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {product.images.gallery.map((src, i) => (
+              <div key={i} className="relative w-full h-40">
+                <Image src={src} alt={product.title} fill className="object-cover rounded" />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* FAQ (optionnel si présent dans products.json) */}
       {Array.isArray(product.faq) && product.faq.length > 0 && (
         <section id="faq" className="mb-10">
           <h2 className="text-2xl font-semibold mb-3">FAQ</h2>
@@ -259,7 +184,6 @@ export default function ReviewPage({ params }) {
         </section>
       )}
 
-      {/* CTA bas */}
       {product.affiliateLink && (
         <section id="buy" className="text-center mt-12">
           <a
