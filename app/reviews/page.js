@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import db from "../../products.json";
+import Stars from "../components/Stars"; // ✅ ajout de l'import
 
 export default function ReviewsPage() {
   const [search, setSearch] = useState("");
@@ -23,6 +25,7 @@ export default function ReviewsPage() {
         Honest and detailed reviews of the latest laptops, keyboards, and other tech gear.
       </p>
 
+      {/* Barre de recherche */}
       <div className="flex justify-center mb-10">
         <input
           type="text"
@@ -33,6 +36,7 @@ export default function ReviewsPage() {
         />
       </div>
 
+      {/* Grille des reviews */}
       {filteredProducts.length > 0 ? (
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProducts.map((product) => (
@@ -41,9 +45,11 @@ export default function ReviewsPage() {
               className="border rounded-xl shadow-sm hover:shadow-md transition bg-white flex flex-col"
             >
               {product.images?.main && (
-                <img
+                <Image
                   src={product.images.main}
                   alt={product.title}
+                  width={600}
+                  height={400}
                   className="w-full h-48 object-cover rounded-t-xl"
                 />
               )}
@@ -55,17 +61,10 @@ export default function ReviewsPage() {
                 </p>
                 <p className="text-gray-700 mb-4 line-clamp-3">{product.intro}</p>
 
+                {/* ✅ Affichage des étoiles via le composant Stars */}
                 {product.rating?.overall && (
-                  <div className="flex items-center mb-4">
-                    <span className="text-yellow-500 mr-2">
-                      {"★".repeat(product.rating.overall)}
-                    </span>
-                    <span className="text-gray-400">
-                      {"★".repeat(10 - product.rating.overall)}
-                    </span>
-                    <span className="ml-2 text-gray-600 text-sm">
-                      {product.rating.overall}/10
-                    </span>
+                  <div className="mb-4">
+                    <Stars value={product.rating.overall} outOf={10} />
                   </div>
                 )}
 

@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "All Categories – Tech Reviews Hub",
+  description: "Browse product categories and subcategories.",
+};
+
 import Link from "next/link";
 
 const categoryTree = {

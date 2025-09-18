@@ -1,5 +1,6 @@
 import Link from "next/link";
 import db from "../../products.json";
+import Image from "next/image";
 
 export default function ArticlesPage() {
   const { articles, products } = db;
@@ -27,7 +28,7 @@ export default function ArticlesPage() {
                   className="border rounded-xl shadow-sm bg-white overflow-hidden"
                 >
                   {p.images?.main && (
-                    <img
+                    <Image
                       src={p.images.main}
                       alt={p.title}
                       className="w-full h-40 object-cover"
@@ -69,7 +70,7 @@ export default function ArticlesPage() {
                   <div className="grid grid-cols-2 gap-0">
                     <div className="p-4">
                       {left.images?.main && (
-                        <img
+                        <Image
                           src={left.images.main}
                           alt={left.title}
                           className="w-full h-32 object-cover rounded"
@@ -79,7 +80,7 @@ export default function ArticlesPage() {
                     </div>
                     <div className="p-4 border-l">
                       {right.images?.main && (
-                        <img
+                        <Image
                           src={right.images.main}
                           alt={right.title}
                           className="w-full h-32 object-cover rounded"

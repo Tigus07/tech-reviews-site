@@ -1,6 +1,29 @@
 import { notFound, redirect } from "next/navigation";
 import db from "../../../products.json";
 
+export function generateMetadata({ params }) {
+  const article = (db.articles || []).find((a) => a.slug === params.slug);
+  if (!article) return { title: "Article not found" };
+
+  const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const url = `${site}/articles/${article.slug}`;
+  let title = article.title || "Article";
+  let description =
+    article.intro?.slice(0, 160) || "Tech article, reviews and comparisons.";
+
+  if (article.type === "comparison" && !article.intro) {
+    description = `Side-by-side comparison to help you choose.`;
+  }
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}
+
 export default function ArticlePage({ params }) {
   const { slug } = params;
   const { articles, products } = db;
@@ -19,14 +42,33 @@ export default function ArticlePage({ params }) {
     if (!left || !right) return notFound();
 
     const specKeys = Array.from(
-      new Set([
-        ...Object.keys(left.specs || {}),
-        ...Object.keys(right.specs || {}),
-      ])
+      new Set([...Object.keys(left.specs || {}), ...Object.keys(right.specs || {})])
     );
 
     return (
       <main className="max-w-5xl mx-auto px-6 py-12">
+        {/* JSON-LD Article (comparison) */}
+        {(() => {
+          const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+          const url = `${site}/articles/${slug}`;
+          const names = (article.products || [])
+            .map((sl) => productBySlug[sl]?.title)
+            .filter(Boolean);
+          const data = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            about: names,
+            url,
+          };
+          return (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+            />
+          );
+        })()}
+
         <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
         {article.intro && <p className="text-gray-700 mb-6">{article.intro}</p>}
 
@@ -34,6 +76,7 @@ export default function ArticlePage({ params }) {
           {[left, right].map((p, idx) => (
             <div key={idx} className="border rounded-lg p-4 bg-white shadow-sm">
               {p.images?.main && (
+                // Remets Image de next/image si tu l'utilises ici
                 <img
                   src={p.images.main}
                   alt={p.title}
@@ -46,7 +89,7 @@ export default function ArticlePage({ params }) {
                 <a
                   href={p.affiliateLink}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="nofollow sponsored noopener noreferrer"
                   className="inline-block mt-3 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded"
                 >
                   Buy on Amazon
@@ -99,11 +142,34 @@ export default function ArticlePage({ params }) {
           heading: "Top Pick",
           blurb: productBySlug[sl]?.intro,
           p: productBySlug[sl],
-        })))
-      .filter((x) => x.p);
+        }))).filter((x) => x.p);
 
     return (
       <main className="max-w-5xl mx-auto px-6 py-12">
+        {/* JSON-LD ItemList (guide) */}
+        {(() => {
+          const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+          const data = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: article.title,
+            itemListElement: (article.products || [])
+              .map((sl, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                name: productBySlug[sl]?.title,
+                url: `${site}/reviews/${sl}`,
+              }))
+              .filter((x) => x.name),
+          };
+          return (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+            />
+          );
+        })()}
+
         <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
         {article.intro && <p className="text-gray-700 mb-6">{article.intro}</p>}
 
@@ -111,7 +177,8 @@ export default function ArticlePage({ params }) {
           {items.map((x, i) => (
             <li key={i} className="border rounded-lg p-4 bg-white shadow-sm">
               <div className="flex flex-col md:flex-row gap-4">
-                {x.p.images?.main && (
+                {x.p?.images?.main && (
+                  // Remets Image de next/image si tu l'utilises ici
                   <img
                     src={x.p.images.main}
                     alt={x.p.title}
@@ -121,17 +188,17 @@ export default function ArticlePage({ params }) {
                 <div>
                   <h2 className="text-xl font-semibold">{x.heading}</h2>
                   <p className="text-sm text-gray-600 mt-1">{x.blurb}</p>
-                  <p className="mt-2 font-medium">{x.p.title}</p>
+                  <p className="mt-2 font-medium">{x.p?.title}</p>
                   <ul className="list-disc list-inside text-gray-700 mt-1">
-                    {(x.p.highlights || []).slice(0, 3).map((h, idx) => (
+                    {(x.p?.highlights || []).slice(0, 3).map((h, idx) => (
                       <li key={idx}>{h}</li>
                     ))}
                   </ul>
-                  {x.p.affiliateLink && (
+                  {x.p?.affiliateLink && (
                     <a
                       href={x.p.affiliateLink}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow sponsored noopener noreferrer"
                       className="inline-block mt-3 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded"
                     >
                       View on Amazon

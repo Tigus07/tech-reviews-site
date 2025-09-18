@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import db from "../../../products.json";
 
 const categoryTree = {
@@ -25,6 +26,26 @@ const categoryTree = {
   ],
 };
 
+/** SEO: title/description/canonical/OG/Twitter */
+export function generateMetadata({ params }) {
+  const slug = params.slug;
+  const titleBase = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+  const title = `${titleBase} – Reviews & Buying Advice`;
+  const description = `Browse reviews, specs and comparisons for ${titleBase}.`;
+  const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const url = `${site}/categories/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: "summary", title, description },
+  };
+}
+
 export default function CategoryPage({ params }) {
   const { slug } = params;
   const mainSubs = categoryTree[slug];
@@ -48,6 +69,28 @@ export default function CategoryPage({ params }) {
         {slug.replace("-", " ")}
       </h1>
 
+      {/* JSON-LD ItemList */}
+      {(() => {
+        const site = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+        const items = filtered.map((p, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `${site}/reviews/${p.slug}`,
+          name: p.title,
+        }));
+        const itemListLd = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: items,
+        };
+        return (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+          />
+        );
+      })()}
+
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((product) => (
           <div
@@ -55,9 +98,11 @@ export default function CategoryPage({ params }) {
             className="border rounded-xl shadow-sm hover:shadow-md transition bg-white flex flex-col"
           >
             {product.images?.main && (
-              <img
+              <Image
                 src={product.images.main}
                 alt={product.title}
+                width={600}
+                height={400}
                 className="w-full h-48 object-cover rounded-t-xl"
               />
             )}
