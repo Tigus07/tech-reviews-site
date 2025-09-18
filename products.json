@@ -1,47 +1,154 @@
-[
-  {
-    "slug": "logitech-g-pro-wireless",
-    "title": "Logitech G Pro Wireless Review – The Ultimate Esports Gaming Mouse",
-    "asin": "B07GCKQD77",
-    "intro": "The Logitech G Pro Wireless is a top-tier mouse for competitive gamers who want speed and precision.",
-    "features": [
-      "Ultra-lightweight design (80g)",
-      "Hero 25K sensor with 25,600 DPI",
-      "Wireless LIGHTSPEED technology with < 1ms latency",
-      "Ambidextrous design with removable buttons",
-      "Battery life: up to 60 hours"
-    ],
-    "pros": ["Extremely responsive & reliable", "Lightweight for competitive play"],
-    "cons": ["Expensive compared to other mice", "No Bluetooth option"],
-    "images": [
-      "/images/logitech-g-pro-1.jpg",
-      "/images/logitech-g-pro-2.jpg"
-    ],
-	"date": "2025-09-01",
-    "ctaText": "Check the latest price on Amazon",
-    "layoutType": "review",
-    "conclusion": "Overall, the Logitech G Pro Wireless remains a benchmark for competitive gaming mice, despite its premium price."
-  },
-  {
-    "slug": "best-gaming-keyboards",
-    "title": "Best Gaming Keyboards 2025 – Top Picks for Every Gamer",
-    "asin": null,
-    "intro": "Choosing the right keyboard can completely change your gaming experience. Here are our top picks.",
-    "features": [
-      "Mechanical switches with fast actuation",
-      "RGB customization with software support",
-      "Durable build quality",
-      "Ergonomic wrist support"
-    ],
-    "pros": ["Wide variety of options", "Great for long sessions"],
-    "cons": ["Some models are pricey", "RGB may not appeal to everyone"],
-    "images": [
-      "/images/keyboards-1.jpg",
-      "/images/keyboards-2.jpg"
-    ],
-	"date": "2025-09-08",
-    "ctaText": "See our full list on Amazon",
-    "layoutType": "comparison",
-    "conclusion": "Whether you’re a casual gamer or a pro, investing in a good gaming keyboard is worth every penny."
-  }
-]
+{
+  "products": [
+    {
+      "slug": "asus-rog-strix-g15",
+      "title": "ASUS ROG Strix G15 Gaming Laptop",
+      "brand": "ASUS",
+      "category": "laptops",
+      "date": "2025-01-15",
+      "intro": "The ASUS ROG Strix G15 is a powerful gaming laptop that combines high performance with an aggressive design. Equipped with an NVIDIA RTX 3060 and AMD Ryzen 7, it delivers smooth gameplay and multitasking performance for both gamers and creators.",
+      "images": {
+        "main": "/images/asus-rog-strix-g15/main.jpg",
+        "gallery": [
+          "/images/asus-rog-strix-g15/keyboard.jpg",
+          "/images/asus-rog-strix-g15/side.jpg",
+          "/images/asus-rog-strix-g15/back.jpg"
+        ]
+      },
+      "highlights": [
+        "144Hz Full HD display",
+        "Powerful cooling system",
+        "Customizable RGB keyboard"
+      ],
+      "specs": {
+        "Processor": "AMD Ryzen 7 5800H",
+        "Graphics Card": "NVIDIA GeForce RTX 3060 (6GB)",
+        "RAM": "16GB DDR4",
+        "Storage": "512GB NVMe SSD",
+        "Display": "15.6'' Full HD, 144Hz"
+      },
+      "pros": ["Excellent gaming performance", "Solid build quality", "Good value for money"],
+      "cons": ["Average battery life (~5h mixed use)", "Fans get loud in performance mode"],
+      "rating": { "performance": 9, "design": 8, "value": 7, "overall": 8 },
+      "affiliateLink": "https://www.amazon.com/dp/XXXX/?tag=yourAffiliateID"
+    },
+    {
+      "slug": "msi-gf65-thin",
+      "title": "MSI GF65 Thin Gaming Laptop",
+      "brand": "MSI",
+      "category": "laptops",
+      "date": "2025-02-10",
+      "intro": "The MSI GF65 Thin is a lightweight gaming laptop focused on portability while delivering solid 1080p performance.",
+      "images": {
+        "main": "/images/msi-gf65-thin/main.jpg",
+        "gallery": ["/images/msi-gf65-thin/angle.jpg"]
+      },
+      "highlights": ["Thin-and-light design", "Good thermals for the size"],
+      "specs": {
+        "Processor": "Intel Core i7-10750H",
+        "Graphics Card": "NVIDIA GeForce RTX 3060 (6GB)",
+        "RAM": "16GB DDR4",
+        "Storage": "512GB NVMe SSD",
+        "Display": "15.6'' Full HD, 144Hz"
+      },
+      "pros": ["Portable build", "Good performance for 1080p gaming"],
+      "cons": ["Average battery life", "Chassis flex in some areas"],
+      "rating": { "performance": 8, "design": 8, "value": 7, "overall": 8 },
+      "affiliateLink": "https://www.amazon.com/dp/MSIGF65?tag=yourAffiliateID"
+    },
+    {
+      "slug": "keychron-k8-wireless-keyboard",
+      "title": "Keychron K8 Wireless Mechanical Keyboard",
+      "brand": "Keychron",
+      "category": "keyboards",
+      "date": "2025-03-05",
+      "intro": "The Keychron K8 is a versatile wireless mechanical keyboard that supports both Mac and Windows. With hot-swappable switches, solid build quality, and Bluetooth connectivity, it's a great choice for productivity and gaming.",
+      "images": {
+        "main": "/images/keychron-k8/main.jpg",
+        "gallery": ["/images/keychron-k8/side.jpg", "/images/keychron-k8/switches.jpg"]
+      },
+      "highlights": [
+        "Wireless Bluetooth 5.1 and USB-C wired",
+        "Hot-swappable switches",
+        "Compact TKL layout with aluminum frame"
+      ],
+      "specs": {
+        "Switch Options": "Gateron Red, Blue, or Brown",
+        "Connectivity": "Bluetooth 5.1 & USB-C wired",
+        "Battery": "4000mAh (up to 240h typing)",
+        "Layout": "87 Keys (TKL)",
+        "Compatibility": "Mac & Windows"
+      },
+      "pros": ["Great typing experience", "Supports both Mac & Windows", "Long battery life"],
+      "cons": ["No dedicated number pad", "Keycaps could be higher quality"],
+      "rating": { "performance": 8, "design": 9, "value": 8, "overall": 8 },
+      "affiliateLink": "https://www.amazon.com/dp/YYYY/?tag=yourAffiliateID"
+    },
+    {
+      "slug": "logitech-g915-tkl",
+      "title": "Logitech G915 TKL Wireless Mechanical Keyboard",
+      "brand": "Logitech",
+      "category": "keyboards",
+      "date": "2025-04-01",
+      "intro": "The Logitech G915 TKL is a premium low-profile wireless keyboard with dedicated media controls and excellent build quality.",
+      "images": {
+        "main": "/images/logitech-g915-tkl/main.jpg",
+        "gallery": ["/images/logitech-g915-tkl/top.jpg"]
+      },
+      "highlights": ["Low-profile switches", "Long battery life", "Media wheel"],
+      "specs": {
+        "Switch Options": "GL Tactile/Linear/Clicky",
+        "Connectivity": "LIGHTSPEED Wireless & Bluetooth",
+        "Battery": "Up to 40h with RGB on",
+        "Layout": "TKL",
+        "Compatibility": "Windows & macOS"
+      },
+      "pros": ["Excellent build", "Great wireless performance"],
+      "cons": ["Expensive", "Non-hot-swappable"],
+      "rating": { "performance": 9, "design": 9, "value": 7, "overall": 8 },
+      "affiliateLink": "https://www.amazon.com/dp/LOGIG915?tag=yourAffiliateID"
+    }
+  ],
+  "articles": [
+    {
+      "type": "review",
+      "slug": "review-asus-rog-strix-g15",
+      "productSlug": "asus-rog-strix-g15",
+      "title": "ASUS ROG Strix G15 – Full Review"
+    },
+    {
+      "type": "review",
+      "slug": "review-keychron-k8",
+      "productSlug": "keychron-k8-wireless-keyboard",
+      "title": "Keychron K8 – Full Review"
+    },
+    {
+      "type": "comparison",
+      "slug": "asus-rog-strix-g15-vs-msi-gf65-thin",
+      "title": "ASUS ROG Strix G15 vs MSI GF65 Thin: Which should you buy?",
+      "products": ["asus-rog-strix-g15", "msi-gf65-thin"],
+      "intro": "Both laptops target 1080p gaming with RTX 3060 GPUs, but their priorities differ. Here's a clear breakdown to help you choose.",
+      "verdict": "Pick the Strix for sustained performance and chassis quality; pick the GF65 if weight and portability matter most."
+    },
+    {
+      "type": "guide",
+      "slug": "best-gaming-keyboards-2025",
+      "title": "Best Gaming Keyboards in 2025 — Top Picks",
+      "category": "keyboards",
+      "intro": "We tested and curated the best gaming keyboards for different needs — from battery life to low-latency performance.",
+      "products": ["logitech-g915-tkl", "keychron-k8-wireless-keyboard"],
+      "sections": [
+        {
+          "heading": "Best Premium Wireless",
+          "product": "logitech-g915-tkl",
+          "blurb": "Low-profile feel, excellent build, and rock-solid LIGHTSPEED wireless."
+        },
+        {
+          "heading": "Best Value Hot-Swap",
+          "product": "keychron-k8-wireless-keyboard",
+          "blurb": "Great typing feel with hot-swappable switches at a friendly price."
+        }
+      ]
+    }
+  ]
+}

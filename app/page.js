@@ -1,5 +1,5 @@
 import Card from "./components/Card"
-import products from "../products.json"
+import db from "../products.json"
 import Link from "next/link"
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
   ]
 
   // Trier les produits par date dÃ©croissante
-  const sortedProducts = [...products].sort(
+  const sortedProducts = [...db.products].sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   )
 
@@ -50,7 +50,7 @@ export default function Home() {
               key={i}
               title={product.title}
               description={product.intro || "Read our full review."}
-              link={`/${product.slug}`}
+              slug={product.slug}
             />
           ))}
         </div>
