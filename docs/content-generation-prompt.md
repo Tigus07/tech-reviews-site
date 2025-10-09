@@ -83,6 +83,8 @@ Validate that the JSON output can be merged into `products.json` without missing
 ## Integration tips
 
 1. Run the prompt, then validate the JSON (for example with `jq`).
-2. Add the generated product to `products.json.products[]` and the article to `products.json.articles[]`.
-3. Update any slugs referenced elsewhere (`related`, `matrix`, etc.) so they point to existing entries.
-4. Deploy: the `/reviews` and `/articles` pages will automatically consume the new data via ISR.
+2. Copy the `products` entry into the top-level `products[]` array inside `products.json`.
+3. Copy the `articles` entry into the top-level `articles[]` array inside the same file.
+4. Update any cross-references (`related`, `matrix.products`, `productSlug`, etc.) so they point to existing slugs.
+5. Launch the dev server (`npm run dev`) and open the new `/reviews/[slug]` and `/articles/[slug]` pages to confirm they render properly.
+6. Commit the updated `products.json` and deploy. Incremental Static Regeneration will pick up the new content automatically.
